@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Form</title>
+</head>
+<body>
+    <p>Hi,Welcome to the SignUp Page</p>
+    <p>Today is {{ today }}</p>
+    <p>{{ datetime }}</p>
+    <form action="/submit-signup" class="formm" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <input type="submit" value="Sign Up">
+        <br><br>
+        <p>Already have an account? <a href="/login">Login</a></p>
+    </form>
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+    p{
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 20px;
+        line-height: 1.5;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        transition: color 0.3s ease-in-out;
+        cursor: pointer;
+    }
+    .formm{
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        text-align: left;
+        font-size: 18px;
+    }
+</style>
+</html>
