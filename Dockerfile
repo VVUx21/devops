@@ -1,11 +1,11 @@
-FROM python:3.8-alpine
+FROM node:16-alpine
 
-WORKDIR /tree
+WORKDIR /app
 
-ADD . . 
+ADD /nodefiles . 
 #it will add all the files in the current working directory and put them in the container in the folder tree.
 # ADD names.txt .
-ENTRYPOINT [ "python" ] 
+ENTRYPOINT [ "node" ] 
 #execute the command
 
-CMD [ "heeloworld.py" ]
+CMD [ "app.js" ]
