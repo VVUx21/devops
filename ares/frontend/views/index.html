@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>This is a simple HTML document.</p>
+    <p>I'm learning HTML.</p>
+    <p>This is a paragraph with <a href="https://www.google.com">a link</a>.</p>
+    <!-- give some ejs dynamic data -->
+    <p>This is a paragraph with a variable: <%= data %></p>
+    <p>This is a paragraph with <strong>bold</strong> text.</p>
+    <p>This is a paragraph with <em>italic</em> text.</p>
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    h1 {
+        color: red;
+    }
+    p {
+        font-size: 18px;
+    }
+    strong {
+        font-weight: bold;
+    }
+    em {
+        font-style: italic;
+    }
+    p::first-letter {
+        font-size: 24px;
+        color: blue;
+    }
+    p::after {
+        content: " - My Website";
+        font-size: 12px;
+        color: gray;
+    }
+    p::before {
+        content: "This is a ";
+        font-size: 12px;
+        color: gray;
+    }
+    p::selection {
+        background-color: yellow;
+    }
+    p::marker {
+        content: "��️";
+        color: red;
+    }
+</style>
+</html>
