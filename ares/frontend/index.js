@@ -1,27 +1,25 @@
 //express app that serves the html file
 
 const express = require('express');
-const app = express();
 const path = require('path');
 
-app.use(express.static(path.join(__dirname,'public')));
+const app = express();
 
-const URL = process.env.BACKEND_URL || 'http://localhost:8080/api';  // replace with your actual API URL
+app.set('view engine', 'ejs'); // Set EJS as the template engine
+app.set('views', path.join(__dirname, 'views')); // Set the directory for EJS files
+app.use(express.static(path.join(__dirname, 'public'))); // Serve static files
 
-const fetch = (...args) => 
-  import ('node:fetch').then(({ default:fetch }) => fetch(...args));
+const URL = process.env.BACKEND_URL || 'http://localhost:8080/api'; // Replace with your actual API URL
 
-app.get('/', async function (req,res) {
-  const options ={
-    method: 'GET'
+app.get('/', async (req, res) => {
+  const options = {
+    method: 'GET',
   };
-
-  fetch(URL, options).then(res => res.json()).then(json => console.log(json)).catch(error => console.error(error))
 
   try {
     const response = await fetch(URL, options);
     const data = await response.json();
-    res.render('index', data)
+    res.render('index', { data }); // Pass data to the 'index.ejs' template
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({
